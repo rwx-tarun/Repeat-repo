@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int kadane(int a[],int n)
+{
+    int gb,lc;
+    gb=lc=a[0];
+    for(int i=1;i<n;i++)
+    {
+        lc=max(a[i],a[i]+lc);
+        gb=max(gb,lc);
+    }
+    return gb;
+}
+
+
+
+
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++)
+        cin>>a[i];
+    cout<<kadane(a,n);
+    return 0;
+    
+}
